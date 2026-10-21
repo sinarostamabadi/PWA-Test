@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import "@fontsource/estedad/400.css";
+@import "@fontsource/estedad/600.css";
+@import "@fontsource/estedad/700.css";
+
+:lang(en) {
+  font-family: "Inter", sans-serif;
+}
+
+:lang(fa) {
+  font-family: "Estedad", sans-serif;
+}
+
+:root {
+  --primary: #ff2d55;
+}
+
+@theme {
+  --color-primary: #ff2d55;
+  --color-primary-100: #d6dcf8;
+  --color-primary-500: #365cb8;
+  --color-primary-600: #254185;
+  --color-primary-700: #142755;
+  --color-primary-800: #0d1c40;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f6f5f2;
+  color: #142755;
+  font-family: "Estedad", sans-serif;
+}
+
+.reader-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d6d3d1 transparent;
+}
+
+@keyframes search-hit-in {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #f3e2b8;
+  }
+}
+
+@keyframes search-hit-active {
+  from {
+    background-color: #f3e2b8;
+    color: inherit;
+  }
+  to {
+    background-color: #142755;
+    color: #fff;
+  }
+}
+
+.search-hit {
+  border-radius: 0.2rem;
+  padding: 0 0.15rem;
+  background-color: #f3e2b8;
+  color: inherit;
+  box-decoration-break: clone;
+  animation: search-hit-in 0.35s ease;
+}
+
+.search-hit-active {
+  background-color: #142755;
+  color: #fff;
+  animation: search-hit-active 0.45s ease;
+  scroll-margin-top: 7.5rem;
+  scroll-margin-bottom: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-hit,
+  .search-hit-active {
+    animation: none;
+  }
+}
