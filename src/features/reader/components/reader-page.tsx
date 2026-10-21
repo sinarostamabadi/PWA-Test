@@ -114,6 +114,7 @@ export default function ReaderPage() {
 
       <main className="mx-auto flex max-w-3xl flex-col gap-5 px-4 py-6">
         <ReaderDocument
+          title={SAMPLE_DOCUMENT.title}
           paragraphs={SAMPLE_DOCUMENT.paragraphs}
           matches={hasQuery ? matches : []}
           activeId={hasQuery ? activeId : -1}

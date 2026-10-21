@@ -4,6 +4,7 @@ import { TextMatch } from "../types/reader.types";
 import HighlightText from "./highlight-text";
 
 export type ReaderDocumentProps = {
+  title: string;
   paragraphs: string[];
   matches: TextMatch[];
   activeId: number;
@@ -29,6 +30,7 @@ const scrollToHit = (activeId: number) => {
 };
 
 export default function ReaderDocument({
+  title,
   paragraphs,
   matches,
   activeId,
@@ -51,6 +53,9 @@ export default function ReaderDocument({
 
   return (
     <article className="rounded-3xl border border-[#e7e5e4] bg-white px-6 py-8 shadow-[0_1px_2px_rgba(20,39,85,0.04),0_16px_40px_rgba(20,39,85,0.05)] sm:px-8">
+      <h2 className="mb-6 border-b border-[#f0eeea] pb-4 text-2xl font-semibold tracking-tight">
+        {title}
+      </h2>
       <div className="space-y-5 text-[15.5px] leading-9 text-[#292524]">
         {paragraphs.map((paragraph, index) => (
           <p key={index} className="text-justify">

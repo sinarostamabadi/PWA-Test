@@ -1,4 +1,5 @@
 export type ReaderDocument = {
+  title: string;
   paragraphs: string[];
 };
 
